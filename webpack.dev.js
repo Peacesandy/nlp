@@ -45,6 +45,10 @@ module.exports = {
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false,
         }),
+        new WorkboxPlugin.GenerateSW({
+            clientsClaim: true,
+            skipWaiting: true,
+        }),
     ],
     devServer: {
         static: path.resolve(__dirname, 'dist'),
